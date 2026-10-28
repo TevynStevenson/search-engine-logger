@@ -7,10 +7,21 @@ import java.io.*;
 public class SearchEngineApp {
     public static void main(String[] args) {
                                 //Main Class
+
+        //Add searchEngineLogger method to be called
+        searchEngineLogger("launch");
+
+
+
+
         //Prompt user for a search term that they wish to search
         Scanner input = new Scanner(System.in);
         System.out.print("Enter search term: (X or x to exit): ");
         String searchTerm = input.nextLine();
+
+        //Add method for searchTerm
+        searchEngineLogger(searchTerm);
+
 
 
     }
@@ -33,15 +44,21 @@ public static void searchEngineLogger(String action ){
     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
     Scanner input = new Scanner(System.in);
 
+
     //write to the file
     String text = action;
     try {
         bufferedWriter.write(text);
         bufferedWriter.newLine();
-    } catch (IOException e) {
+
+        // Close the bufferedwriter
+        bufferedWriter.close();
+
+
+    } catch (Exception e) {
+        System.out.println("Error while writing to file");
         throw new RuntimeException(e);
     }
-
 
 }
 
