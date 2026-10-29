@@ -5,3 +5,8 @@ action
 action
 launch
 Hi
+launch
+X
+launch
+X
+exit

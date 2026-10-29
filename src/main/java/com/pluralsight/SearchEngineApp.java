@@ -12,8 +12,6 @@ public class SearchEngineApp {
         searchEngineLogger("launch");
 
 
-
-
         //Prompt user for a search term that they wish to search
         Scanner input = new Scanner(System.in);
         System.out.print("Enter search term: (X or x to exit): ");
@@ -21,6 +19,13 @@ public class SearchEngineApp {
 
         //Add method for searchTerm
         searchEngineLogger(searchTerm);
+
+        //Add method for exiting the application
+        if (searchTerm.equalsIgnoreCase("X")){
+            searchEngineLogger("exit");
+        } else {
+            searchEngineLogger("search");
+        }
 
 
 
